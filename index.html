@@ -100,6 +100,7 @@
     align-items: flex-start;
     grid-column: 2;
     text-align: left;
+    max-width: 420px;
     width: 100%;
     animation: fadeUp 800ms var(--ease-out) both;
   }
@@ -113,9 +114,10 @@
   .status {
     display: inline-flex;
     align-items: center;
+    align-self: center;
     gap: 10px;
     padding: 6px 14px;
-    margin-bottom: 56px;
+    margin-bottom: 80px;
     background: rgba(19, 9, 31, 0.6);
     border: 1px solid var(--line);
     border-radius: 999px;
@@ -195,8 +197,9 @@
   .links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 6px;
+    align-self: center;
+    justify-content: center;
+    gap: 12px;
     margin-bottom: 64px;
   }
 
@@ -247,7 +250,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    align-self: center;
+    justify-content: center;
     gap: 6px;
     margin-top: -48px;
     margin-bottom: 64px;
@@ -262,7 +266,7 @@
     color: var(--violet-400);
     opacity: 0.7;
     width: 100%;
-    text-align: left;
+    text-align: center;
     margin-bottom: 2px;
     user-select: none;
   }
