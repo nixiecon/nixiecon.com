@@ -100,8 +100,7 @@
     align-items: flex-start;
     grid-column: 2;
     text-align: left;
-    max-width: 420px;
-    min-height: calc(100vh - 64px);
+    max-width: 520px;
     width: 100%;
     animation: fadeUp 800ms var(--ease-out) both;
   }
@@ -200,9 +199,8 @@
     flex-wrap: wrap;
     align-self: center;
     justify-content: center;
-    gap: 12px;
-    margin-top: auto;
-    margin-bottom: 8px;
+    gap: 8px;
+    margin-bottom: 64px;
   }
 
   .link {
@@ -245,6 +243,13 @@
 
   .link:active {
     transform: scale(0.94);
+  }
+
+  .link-sep {
+    width: 1px;
+    height: 18px;
+    background: var(--line);
+    margin: 0 4px;
   }
 
   /* ---------- tip row (subtle payment links) ---------- */
@@ -443,8 +448,6 @@
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.01-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.02 2.89-.02 3.29 0 .32.22.7.83.58A12 12 0 0024 12c0-6.63-5.37-12-12-12z"/>
       </svg>
-      <span class="label always">github</span>
-      <span class="arrow">↗</span>
     </a>
 
     <a class="link" href="https://tiktok.com/@nixieconrafa" target="_blank" rel="noopener" aria-label="TikTok / nixieconrafa" title="TikTok / nixieconrafa">
@@ -458,26 +461,22 @@
         <rect x="2" y="5" width="20" height="14" rx="2"/>
         <path d="m2 7 10 7 10-7"/>
       </svg>
-      <span class="label">email</span>
-      <span class="arrow">↗</span>
+    </a>
+
+    <span class="link-sep" aria-hidden="true"></span>
+
+    <a class="link" href="https://venmo.com/nixiecon" target="_blank" rel="noopener" aria-label="Venmo - @nixiecon" title="Venmo - @nixiecon">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 4.5a1.8 1.8 0 0 1 3.4-.6l3.6 9.7a.75.75 0 0 0 1.4 0l3.6-9.7a1.8 1.8 0 0 1 3.4.6c0 .25-.05.5-.14.74l-5.4 13.5a2.4 2.4 0 0 1-4.46 0L4.44 5.24A2 2 0 0 1 4.3 4.5Z"/></svg>
+    </a>
+
+    <a class="link" href="https://paypal.me/nixiecon" target="_blank" rel="noopener" aria-label="PayPal - @nixiecon" title="PayPal - @nixiecon">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></svg>
+    </a>
+
+    <a class="link" href="https://cash.app/$nixiecon" target="_blank" rel="noopener" aria-label="Cash App - $nixiecon" title="Cash App - $nixiecon">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.59 3.475a5.1 5.1 0 00-3.05-3.05c-1.31-.42-2.5-.42-4.92-.42H8.36c-2.4 0-3.61 0-4.9.4a5.1 5.1 0 00-3.05 3.06C0 4.765 0 5.965 0 8.365v7.27c0 2.41 0 3.6.4 4.9a5.1 5.1 0 003.05 3.05c1.3.41 2.5.41 4.9.41h7.28c2.41 0 3.61 0 4.9-.4a5.1 5.1 0 003.06-3.06c.41-1.3.41-2.5.41-4.9v-7.25c0-2.41 0-3.61-.41-4.91zm-6.17 4.63l-.93.93a.5.5 0 01-.67.01 5 5 0 00-3.22-1.18c-.97 0-1.94.32-1.94 1.21 0 .9 1.04 1.2 2.24 1.65 2.1.7 3.84 1.58 3.84 3.64 0 2.24-1.74 3.78-4.58 3.95l-.26 1.2a.49.49 0 01-.48.39H9.63l-.09-.01a.5.5 0 01-.38-.59l.28-1.27a6.54 6.54 0 01-2.88-1.57v-.01a.48.48 0 010-.68l1-.97a.49.49 0 01.67 0c.91.86 2.13 1.34 3.39 1.32 1.3 0 2.17-.55 2.17-1.42 0-.87-.88-1.1-2.54-1.72-1.76-.63-3.43-1.52-3.43-3.6 0-2.42 2.01-3.6 4.39-3.71l.25-1.23a.48.48 0 01.48-.38h1.78l.1.01c.26.06.43.31.37.57l-.27 1.37c.9.3 1.75.77 2.48 1.39l.02.02c.19.2.19.5 0 .68z"/></svg>
     </a>
   </nav>
-
-  <div class="tips" aria-label="send a small thanks">
-    <span class="tips-label">// keep the lights on:</span>
-    <a class="tip" href="https://venmo.com/nixiecon" target="_blank" rel="noopener" aria-label="Venmo - @nixiecon" title="Venmo - @nixiecon">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 4.5a1.8 1.8 0 0 1 3.4-.6l3.6 9.7a.75.75 0 0 0 1.4 0l3.6-9.7a1.8 1.8 0 0 1 3.4.6c0 .25-.05.5-.14.74l-5.4 13.5a2.4 2.4 0 0 1-4.46 0L4.44 5.24A2 2 0 0 1 4.3 4.5Z"/></svg>
-      <span class="handle">@nixiecon</span>
-    </a>
-    <a class="tip" href="https://paypal.me/nixiecon" target="_blank" rel="noopener" aria-label="PayPal - @nixiecon" title="PayPal - @nixiecon">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></svg>
-      <span class="handle">@nixiecon</span>
-    </a>
-    <a class="tip" href="https://cash.app/$nixiecon" target="_blank" rel="noopener" aria-label="Cash App - $nixiecon" title="Cash App - $nixiecon">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.59 3.475a5.1 5.1 0 00-3.05-3.05c-1.31-.42-2.5-.42-4.92-.42H8.36c-2.4 0-3.61 0-4.9.4a5.1 5.1 0 00-3.05 3.06C0 4.765 0 5.965 0 8.365v7.27c0 2.41 0 3.6.4 4.9a5.1 5.1 0 003.05 3.05c1.3.41 2.5.41 4.9.41h7.28c2.41 0 3.61 0 4.9-.4a5.1 5.1 0 003.06-3.06c.41-1.3.41-2.5.41-4.9v-7.25c0-2.41 0-3.61-.41-4.91zm-6.17 4.63l-.93.93a.5.5 0 01-.67.01 5 5 0 00-3.22-1.18c-.97 0-1.94.32-1.94 1.21 0 .9 1.04 1.2 2.24 1.65 2.1.7 3.84 1.58 3.84 3.64 0 2.24-1.74 3.78-4.58 3.95l-.26 1.2a.49.49 0 01-.48.39H9.63l-.09-.01a.5.5 0 01-.38-.59l.28-1.27a6.54 6.54 0 01-2.88-1.57v-.01a.48.48 0 010-.68l1-.97a.49.49 0 01.67 0c.91.86 2.13 1.34 3.39 1.32 1.3 0 2.17-.55 2.17-1.42 0-.87-.88-1.1-2.54-1.72-1.76-.63-3.43-1.52-3.43-3.6 0-2.42 2.01-3.6 4.39-3.71l.25-1.23a.48.48 0 01.48-.38h1.78l.1.01c.26.06.43.31.37.57l-.27 1.37c.9.3 1.75.77 2.48 1.39l.02.02c.19.2.19.5 0 .68z"/></svg>
-      <span class="handle">$nixiecon</span>
-    </a>
-  </div>
 </main>
 
 
