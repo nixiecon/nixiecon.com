@@ -245,11 +245,15 @@
     transform: scale(0.94);
   }
 
-  .link-sep {
-    width: 1px;
-    height: 18px;
-    background: var(--line);
-    margin: 0 4px;
+  .link-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--violet-400);
+    opacity: 0.7;
+    margin: 0 6px;
+    white-space: nowrap;
+    user-select: none;
   }
 
   /* ---------- tip row (subtle payment links) ---------- */
@@ -463,7 +467,7 @@
       </svg>
     </a>
 
-    <span class="link-sep" aria-hidden="true"></span>
+    <span class="link-label">// keep the lights on:</span>
 
     <a class="link" href="https://venmo.com/nixiecon" target="_blank" rel="noopener" aria-label="Venmo - @nixiecon" title="Venmo - @nixiecon">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 4.5a1.8 1.8 0 0 1 3.4-.6l3.6 9.7a.75.75 0 0 0 1.4 0l3.6-9.7a1.8 1.8 0 0 1 3.4.6c0 .25-.05.5-.14.74l-5.4 13.5a2.4 2.4 0 0 1-4.46 0L4.44 5.24A2 2 0 0 1 4.3 4.5Z"/></svg>
