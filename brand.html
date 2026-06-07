@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nixiecon — brand</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/glyph.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --void: #0a0614; --surface: #13091f; --surface-2: #1a0f2e; --surface-3: #241640;
+    --violet-300: #c4b5fd; --violet-400: #a78bfa; --violet-500: #8b5cf6; --magenta: #ec4899;
+    --fg-1: #ede9fe; --fg-2: #a59cc4; --fg-3: #6b6184;
+    --line: rgba(167,139,250,0.15); --line-strong: rgba(167,139,250,0.35);
+    --glow: 0 0 32px rgba(167,139,250,0.35);
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-ui: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', Menlo, monospace;
+    --ease: cubic-bezier(0.22,1,0.36,1);
+  }
+  html, body { background: var(--void); color: var(--fg-1); font-family: var(--font-ui); -webkit-font-smoothing: antialiased; }
+  body::before { content:""; position: fixed; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(167,139,250,0.12) 1px, transparent 0); background-size: 24px 24px; pointer-events: none; z-index: 0; mask-image: radial-gradient(ellipse at center, #000 40%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 90%); }
+  .wrap { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; padding: 64px 28px 96px; }
+  .status { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: rgba(19,9,31,0.6); border: 1px solid var(--line); border-radius: 999px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--fg-3); text-transform: lowercase; }
+  .status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--violet-400); box-shadow: 0 0 8px var(--violet-400); }
+  h1 { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(52px, 12vw, 104px); line-height: 1; letter-spacing: -0.04em; text-shadow: 0 0 80px rgba(167,139,250,0.45); margin: 22px 0 4px; }
+  .tagline { font-weight: 300; font-size: 17px; color: var(--fg-2); margin-bottom: 8px; }
+  .tagline em { font-family: var(--font-display); font-style: italic; color: var(--violet-300); font-size: 19px; }
+  h2 { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet-400); margin: 56px 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: rgba(255,255,255,0.02); }
+  .chip { height: 84px; }
+  .swatch .meta { padding: 11px 13px; }
+  .swatch .name { font-size: 13px; font-weight: 500; color: var(--fg-1); }
+  .swatch .hex { font-family: var(--font-mono); font-size: 12px; color: var(--fg-2); margin-top: 3px; cursor: pointer; }
+  .swatch .hex:hover { color: var(--violet-300); }
+  .swatch .var { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); margin-top: 2px; }
+  .copytag { font-size: 9px; color: var(--magenta); margin-left: 6px; opacity: 0; transition: opacity 140ms; }
+  .hex.copied .copytag { opacity: 1; }
+  .type-row { border: 1px solid var(--line); border-radius: 10px; padding: 22px 24px; margin-bottom: 12px; background: rgba(255,255,255,0.02); }
+  .type-row .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--fg-3); text-transform: uppercase; margin-bottom: 12px; }
+  .display-sample { font-family: var(--font-display); font-style: italic; font-size: 40px; line-height: 1; color: var(--fg-1); text-shadow: var(--glow); }
+  .ui-sample { font-family: var(--font-ui); font-size: 26px; font-weight: 400; color: var(--fg-1); }
+  .mono-sample { font-family: var(--font-mono); font-size: 22px; color: var(--fg-1); }
+  .sub { font-size: 13px; color: var(--fg-2); margin-top: 8px; }
+  .note { font-size: 13px; color: var(--fg-3); margin-top: 12px; line-height: 1.6; }
+  a.back { display: inline-flex; align-items: center; gap: 6px; color: var(--fg-2); text-decoration: none; font-family: var(--font-mono); font-size: 12px; margin-top: 48px; }
+  a.back:hover { color: var(--violet-300); }
+  footer { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); letter-spacing: 0.08em; text-transform: lowercase; margin-top: 14px; }
+  @media (prefers-reduced-motion: reduce) { *{ animation: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="status"><span class="dot"></span><span>brand · reference</span></div>
+  <h1>nixiecon</h1>
+  <p class="tagline">geriatric millennial <em>&amp; chaos on a schedule</em></p>
+
+  <h2>// palette</h2>
+  <div class="grid" id="palette"></div>
+
+  <h2>// type</h2>
+  <div class="type-row">
+    <div class="label">Display — Instrument Serif (italic)</div>
+    <div class="display-sample">made in the dark</div>
+    <div class="sub">Wordmark + headlines. Always italic.</div>
+  </div>
+  <div class="type-row">
+    <div class="label">UI / Body — Space Grotesk</div>
+    <div class="ui-sample">online · sometimes</div>
+    <div class="sub">300 / 400 / 500 — interface text and taglines.</div>
+  </div>
+  <div class="type-row">
+    <div class="label">Mono / Metadata — JetBrains Mono</div>
+    <div class="mono-sample">est. 2026 · 0123456789</div>
+    <div class="sub">Labels, captions, status pills, footers.</div>
+  </div>
+
+  <h2>// feel</h2>
+  <div class="note">One source of light on a dark void. Dot-grid background, soft violet bloom, a blinking terminal cursor. Magenta is the rare accent — use it sparingly (hover states, "copied" flashes), never as a fill. Lowercase, dry, a little wry.</div>
+
+  <a class="back" href="/">&larr; nixiecon.com</a>
+  <footer>// nixiecon · est. 2026 · made in the dark</footer>
+</div>
+
+<script>
+const PALETTE = [
+  { name: 'Void',        hex: '#0a0614', var: '--void' },
+  { name: 'Surface',     hex: '#13091f', var: '--surface' },
+  { name: 'Surface 2',   hex: '#1a0f2e', var: '--surface-2' },
+  { name: 'Surface 3',   hex: '#241640', var: '--surface-3' },
+  { name: 'Violet 300',  hex: '#c4b5fd', var: '--violet-300' },
+  { name: 'Violet 400',  hex: '#a78bfa', var: '--violet-400' },
+  { name: 'Violet 500',  hex: '#8b5cf6', var: '--violet-500' },
+  { name: 'Magenta',     hex: '#ec4899', var: '--magenta' },
+  { name: 'FG 1',        hex: '#ede9fe', var: '--fg-1' },
+  { name: 'FG 2',        hex: '#a59cc4', var: '--fg-2' },
+  { name: 'FG 3',        hex: '#6b6184', var: '--fg-3' },
+];
+document.getElementById('palette').innerHTML = PALETTE.map(c => `
+  <div class="swatch">
+    <div class="chip" style="background:${c.hex}"></div>
+    <div class="meta">
+      <div class="name">${c.name}</div>
+      <div class="hex" data-hex="${c.hex}">${c.hex}<span class="copytag">copied</span></div>
+      <div class="var">${c.var}</div>
+    </div>
+  </div>`).join('');
+document.querySelectorAll('.hex').forEach(el => {
+  el.addEventListener('click', () => {
+    navigator.clipboard?.writeText(el.dataset.hex);
+    el.classList.add('copied');
+    setTimeout(() => el.classList.remove('copied'), 1200);
+  });
+});
+</script>
+</body>
+</html>
