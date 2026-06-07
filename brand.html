@@ -34,8 +34,9 @@
   .chip { height: 84px; }
   .swatch .meta { padding: 11px 13px; }
   .swatch .name { font-size: 13px; font-weight: 500; color: var(--fg-1); }
-  .swatch .hex { font-family: var(--font-mono); font-size: 12px; color: var(--fg-2); margin-top: 3px; cursor: pointer; }
-  .swatch .hex:hover { color: var(--violet-300); }
+  .swatch .hex { display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--fg-2); margin-top: 3px; cursor: copy; border-bottom: 1px dashed var(--line-strong); transition: color 140ms, border-color 140ms; }
+  .swatch .hex:hover { color: var(--violet-300); border-color: var(--violet-300); }
+  .swatch .hex.copied { color: var(--magenta); border-color: transparent; }
   .swatch .var { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); margin-top: 2px; }
   .copytag { font-size: 9px; color: var(--magenta); margin-left: 6px; opacity: 0; transition: opacity 140ms; }
   .hex.copied .copytag { opacity: 1; }
@@ -104,16 +105,35 @@ document.getElementById('palette').innerHTML = PALETTE.map(c => `
     <div class="chip" style="background:${c.hex}"></div>
     <div class="meta">
       <div class="name">${c.name}</div>
-      <div class="hex" data-hex="${c.hex}">${c.hex}<span class="copytag">copied</span></div>
+      <div class="hex" data-hex="${c.hex}" title="Click to copy">${c.hex}<span class="copytag">&#10003; copied</span></div>
       <div class="var">${c.var}</div>
     </div>
   </div>`).join('');
+function flash(el) {
+  el.classList.add('copied');
+  setTimeout(() => el.classList.remove('copied'), 1200);
+}
+function copyText(text, el) {
+  // navigator.clipboard only works over HTTPS / localhost; fall back otherwise.
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => flash(el)).catch(() => legacyCopy(text, el));
+  } else {
+    legacyCopy(text, el);
+  }
+}
+function legacyCopy(text, el) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.top = '-9999px';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+  flash(el);
+}
 document.querySelectorAll('.hex').forEach(el => {
-  el.addEventListener('click', () => {
-    navigator.clipboard?.writeText(el.dataset.hex);
-    el.classList.add('copied');
-    setTimeout(() => el.classList.remove('copied'), 1200);
-  });
+  el.addEventListener('click', () => copyText(el.dataset.hex, el));
 });
 </script>
 </body>
