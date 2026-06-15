@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Design experiments, not for public indexing
+Disallow: /variant-astral.html
+Disallow: /variant-boudoir.html
+Disallow: /variant-glitch.html
+
+Sitemap: https://nixiecon.com/sitemap.xml
