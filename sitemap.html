@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FVKW58E790"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FVKW58E790');</script>
+<title>site map &middot; nixiecon</title>
+<meta name="description" content="Unlisted directory index of nixiecon.com.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/glyph.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --void:#0a0614; --surface:#13091f; --violet-300:#c4b5fd; --violet-400:#a78bfa;
+    --violet-500:#8b5cf6; --magenta:#ec4899; --fg-1:#ede9fe; --fg-2:#a59cc4; --fg-3:#6b6184;
+    --line:rgba(167,139,250,0.15); --line-strong:rgba(167,139,250,0.35);
+    --glow:0 0 32px rgba(167,139,250,0.35); --glow-lg:0 0 80px rgba(167,139,250,0.45);
+    --font-display:'Instrument Serif',Georgia,serif;
+    --font-ui:'Space Grotesk',-apple-system,system-ui,sans-serif;
+    --font-mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+    --ease-out:cubic-bezier(0.22,1,0.36,1);
+  }
+  html, body { min-height:100%; background:var(--void); color:var(--fg-1); font-family:var(--font-ui); -webkit-font-smoothing:antialiased; }
+  body { position:relative; padding:64px 32px 96px; }
+  body::before { content:""; position:fixed; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(167,139,250,0.12) 1px, transparent 0); background-size:24px 24px; pointer-events:none; z-index:0; mask-image:radial-gradient(ellipse at center,#000 40%,transparent 85%); -webkit-mask-image:radial-gradient(ellipse at center,#000 40%,transparent 85%); }
+  body::after { content:""; position:fixed; left:50%; top:120px; width:720px; height:720px; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(139,92,246,0.30) 0%, rgba(139,92,246,0.10) 30%, transparent 65%); filter:blur(60px); pointer-events:none; z-index:0; }
+  main { position:relative; z-index:1; max-width:760px; margin:0 auto; animation:fadeUp 700ms var(--ease-out) both; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(12px);} to { opacity:1; transform:translateY(0);} }
+  .status { display:inline-flex; align-items:center; gap:10px; padding:6px 14px; margin-bottom:24px; background:rgba(19,9,31,0.6); border:1px solid var(--line); border-radius:999px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; color:var(--fg-3); text-transform:lowercase; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  .status .dot { width:6px; height:6px; border-radius:50%; background:var(--violet-400); box-shadow:0 0 8px var(--violet-400); animation:pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  h1 { font-family:var(--font-display); font-style:italic; font-weight:400; font-size:clamp(40px,8vw,72px); line-height:1; letter-spacing:-0.03em; color:var(--fg-1); text-shadow:var(--glow-lg); margin:0 0 14px; }
+  .sub { font-family:var(--font-ui); font-weight:300; font-size:16px; line-height:1.6; color:var(--fg-2); max-width:560px; margin-bottom:36px; }
+  .tree-card { background:rgba(19,9,31,0.55); border:1px solid var(--line); border-radius:16px; box-shadow:var(--glow); padding:28px 32px; overflow-x:auto; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  .tree { font-family:var(--font-mono); font-size:14px; line-height:1.95; color:var(--fg-3); white-space:pre; margin:0; }
+  .tree .root { color:var(--violet-300); font-weight:500; }
+  .tree .grp { color:var(--magenta); opacity:0.85; font-size:12px; letter-spacing:0.04em; }
+  .tree a { color:var(--violet-400); text-decoration:none; }
+  .tree a:hover { color:var(--violet-300); text-decoration:underline; text-shadow:var(--glow); }
+  .tree .label { color:var(--fg-3); }
+  footer { position:relative; z-index:1; max-width:760px; margin:48px auto 0; display:flex; align-items:center; gap:12px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; color:var(--fg-3); text-transform:lowercase; }
+  footer .sep { color:#4a4360; }
+  footer a { color:var(--violet-400); text-decoration:none; }
+  footer a:hover { color:var(--violet-300); }
+  .tick { position:fixed; width:16px; height:16px; border-color:var(--line-strong); z-index:1; }
+  .tick.tl { top:24px; left:24px; border-top:1px solid; border-left:1px solid; }
+  .tick.tr { top:24px; right:24px; border-top:1px solid; border-right:1px solid; }
+  .tick.bl { bottom:24px; left:24px; border-bottom:1px solid; border-left:1px solid; }
+  .tick.br { bottom:24px; right:24px; border-bottom:1px solid; border-right:1px solid; }
+  @media (max-width:560px) { .tree { font-size:12px; } .tree-card { padding:20px; } h1 { font-size:40px; } }
+  @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; } }
+</style>
+</head>
+<body>
+<span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+<main>
+  <div class="status"><span class="dot"></span><span>directory &middot; unlisted</span></div>
+  <h1>site map</h1>
+  <p class="sub">every file in the void. this page isn&rsquo;t linked from anywhere, you found it by typing the url or following a breadcrumb. welcome.</p>
+  <div class="tree-card"><div class="tree"><span class="root">nixiecon.com/</span>
+|-- <a href="index.html">index.html</a><span class="label">            &middot; home</span>
+|-- <a href="brand.html">brand.html</a><span class="label">            &middot; brand / identity</span>
+|-- <a href="sitemap.html">sitemap.html</a><span class="label">          &middot; this page (unlisted)</span>
+|-- <a href="sitemap.xml">sitemap.xml</a><span class="label">           &middot; search-engine sitemap</span>
+|-- <a href="robots.txt">robots.txt</a><span class="label">            &middot; crawler rules</span>
+|-- <a href="README.md">README.md</a><span class="label">             &middot; repo readme</span>
+|-- CNAME<span class="label">                 &middot; domain config</span>
+|
+<span class="grp">design experiments &middot; not in nav</span>
+|-- <a href="variant-astral.html">variant-astral.html</a><span class="label">   &middot; astral</span>
+|-- <a href="variant-boudoir.html">variant-boudoir.html</a><span class="label">  &middot; boudoir</span>
+|-- <a href="variant-glitch.html">variant-glitch.html</a><span class="label">   &middot; glitch // transmission</span>
+|
+`-- assets/
+    |-- <a href="assets/glyph.svg">glyph.svg</a>
+    |-- <a href="assets/wordmark.svg">wordmark.svg</a>
+    |-- <a href="assets/reference-boudoir.jpg">reference-boudoir.jpg</a>
+    |-- <a href="assets/reference-bsky-profile.png">reference-bsky-profile.png</a>
+    `-- icons/
+        |-- <a href="assets/icons/bluesky.svg">bluesky.svg</a>
+        |-- <a href="assets/icons/cashapp.svg">cashapp.svg</a>
+        |-- <a href="assets/icons/email.svg">email.svg</a>
+        |-- <a href="assets/icons/github.svg">github.svg</a>
+        |-- <a href="assets/icons/patreon.svg">patreon.svg</a>
+        |-- <a href="assets/icons/paypal.svg">paypal.svg</a>
+        |-- <a href="assets/icons/terminal.svg">terminal.svg</a>
+        |-- <a href="assets/icons/tiktok.svg">tiktok.svg</a>
+        |-- <a href="assets/icons/venmo.png">venmo.png</a>
+        |-- <a href="assets/icons/venmo-hover.png">venmo-hover.png</a>
+        |-- <a href="assets/icons/venmo-v.svg">venmo-v.svg</a>
+        |-- <a href="assets/icons/venmo-wordmark.svg">venmo-wordmark.svg</a>
+        |-- <a href="assets/icons/zelle.svg">zelle.svg</a>
+        `-- <a href="assets/icons/preview.html">preview.html</a></div></div>
+</main>
+<footer>
+  <span>// nixiecon</span><span class="sep">&middot;</span><span>est. 2026</span><span class="sep">&middot;</span>
+  <a href="index.html">back to home</a>
+</footer>
+</body>
+</html>
